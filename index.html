@@ -1,0 +1,752 @@
+
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Life & Beyond | Understand Life. Grow with Purpose.</title>
+
+  <meta name="description" content="Explore personal growth, Christian living, personality, life experiences, education and useful resources at Life & Beyond.">
+
+  <meta name="theme-color" content="#172C27">
+
+  <style>
+    :root {
+      --green: #172C27;
+      --green-light: #29443A;
+      --gold: #D6B88C;
+      --cream: #F5F2EA;
+      --white: #FFFFFF;
+      --dark: #292D32;
+      --muted: #777D79;
+      --border: #E7E1D6;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      background: var(--green);
+      color: white;
+    }
+
+    .header-top {
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .brand {
+      font-family: Georgia, serif;
+      font-size: 29px;
+      font-weight: bold;
+      color: var(--gold);
+    }
+
+    .tagline {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: #E0DED6;
+    }
+
+    nav {
+      display: flex;
+      gap: 23px;
+      flex-wrap: wrap;
+      padding: 15px 0 20px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      font-size: 13px;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .menu-button {
+      display: none;
+      background: transparent;
+      color: white;
+      border: 1px solid var(--gold);
+      padding: 7px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: linear-gradient(120deg, #172C27, #29443A);
+      color: white;
+      padding: 95px 20px;
+      text-align: center;
+    }
+
+    .hero-label {
+      color: var(--gold);
+      letter-spacing: 3px;
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(38px, 7vw, 65px);
+      line-height: 1.15;
+      max-width: 850px;
+      margin: auto auto 20px;
+    }
+
+    .hero p {
+      color: #E2E7E3;
+      max-width: 650px;
+      margin: auto;
+      font-size: 16px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 13px 27px;
+      background: var(--gold);
+      color: var(--green);
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    .hero-button:hover {
+      background: white;
+    }
+
+    /* GENERAL SECTIONS */
+
+    .section {
+      padding: 65px 0;
+    }
+
+    .section-heading {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      margin-bottom: 30px;
+      max-width: 680px;
+    }
+
+    .section-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .text-link {
+      color: #80633F;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    /* DEPARTMENTS */
+
+    .departments {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+    }
+
+    .department {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 25px;
+      transition: .2s;
+    }
+
+    .department:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+    }
+
+    .department-number {
+      color: #A68A60;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .department h3 {
+      font-family: Georgia, serif;
+      color: var(--green);
+      font-size: 21px;
+      margin: 10px 0;
+    }
+
+    .department p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* ARTICLES */
+
+    .articles-section {
+      background: #EFEBE1;
+    }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 22px;
+    }
+
+    .article-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .article-category {
+      color: #97764A;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+
+    .article-card h3 {
+      font-family: Georgia, serif;
+      color: var(--green);
+      font-size: 22px;
+      line-height: 1.35;
+      margin: 12px 0;
+    }
+
+    .article-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .article-date {
+      font-size: 12px;
+      color: #92928C;
+      margin-top: 15px;
+    }
+
+    .read-link {
+      display: inline-block;
+      color: #80633F;
+      font-size: 14px;
+      font-weight: bold;
+      margin-top: auto;
+      padding-top: 18px;
+    }
+
+    .empty-message {
+      background: white;
+      padding: 25px;
+      border-radius: 6px;
+      color: var(--muted);
+    }
+
+    /* FEATURE PANELS */
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .feature {
+      background: white;
+      padding: 35px;
+      border-radius: 7px;
+      border: 1px solid var(--border);
+    }
+
+    .feature h3 {
+      font-family: Georgia, serif;
+      color: var(--green);
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .feature a {
+      display: inline-block;
+      margin-top: 18px;
+      color: #80633F;
+      font-weight: bold;
+    }
+
+    /* MISSION */
+
+    .mission {
+      background: var(--green);
+      color: white;
+      padding: 65px 20px;
+      text-align: center;
+    }
+
+    .mission h2 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .mission p {
+      max-width: 700px;
+      margin: auto;
+      color: #E1E5E2;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #101D19;
+      color: white;
+      padding: 40px 0 20px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 30px;
+      padding-bottom: 30px;
+    }
+
+    .footer-content h3 {
+      color: var(--gold);
+      font-family: Georgia, serif;
+      margin-bottom: 12px;
+    }
+
+    .footer-content p,
+    .footer-content a {
+      color: #D0D5D1;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,.15);
+      text-align: center;
+      padding-top: 20px;
+      font-size: 12px;
+      color: #BFC5C0;
+    }
+
+    @media(max-width: 700px) {
+      .header-top {
+        flex-wrap: wrap;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      .hero {
+        padding: 70px 20px;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 48px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+
+      <div class="header-top">
+        <div>
+          <div class="brand">Life & Beyond</div>
+          <div class="tagline">UNDERSTAND LIFE. GROW WITH PURPOSE.</div>
+        </div>
+
+        <button class="menu-button" id="menuButton"
+          aria-expanded="false" aria-controls="mainNav">
+          Menu ☰
+        </button>
+      </div>
+
+      <nav id="mainNav">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="#departments">Departments</a>
+        <a href="#latest-articles">Articles</a>
+        <a href="#resources">Resources</a>
+        <a href="#store">Our Store</a>
+        <a href="#about">About</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+    <div class="hero-label">WELCOME TO LIFE & BEYOND</div>
+
+    <h1>Understand Life.<br>Grow with Purpose.</h1>
+
+    <p>
+      A place for meaningful ideas, personal development,
+      Christian living, self-discovery and opportunities
+      that help you become a better version of yourself.
+    </p>
+
+    <a class="hero-button" href="#latest-articles">
+      Discover Our Articles
+    </a>
+  </section>
+
+  <main>
+
+    <!-- DEPARTMENTS -->
+
+    <section class="section container" id="departments">
+
+      <h2 class="section-heading">Explore Our Departments</h2>
+
+      <p class="section-intro">
+        Different areas of life deserve attention.
+        Explore ideas and knowledge that help you grow.
+      </p>
+
+      <div class="departments">
+
+        <a class="department" href="#latest-articles">
+          <span class="department-number">01 / LIFE</span>
+          <h3>Life & Experiences</h3>
+          <p>
+            Relationships, friendship, life lessons,
+            decision-making and everyday experiences.
+          </p>
+        </a>
+
+        <a class="department" href="#latest-articles">
+          <span class="department-number">02 / GROWTH</span>
+          <h3>Personal Growth</h3>
+          <p>
+            Discipline, confidence, productivity,
+            mindset and self-development.
+          </p>
+        </a>
+
+        <a class="department" href="#latest-articles">
+          <span class="department-number">03 / FAITH</span>
+          <h3>Christian Living</h3>
+          <p>
+            Prayer, Bible study, spiritual maturity,
+            faith and purposeful Christian living.
+          </p>
+        </a>
+
+        <a class="department" href="#latest-articles">
+          <span class="department-number">04 / SELF</span>
+          <h3>Personality & Psychology</h3>
+          <p>
+            Introversion, extroversion, self-awareness,
+            communication and human behaviour.
+          </p>
+        </a>
+
+        <a class="department" href="#latest-articles">
+          <span class="department-number">05 / LEARNING</span>
+          <h3>Learning & Opportunities</h3>
+          <p>
+            Scholarships, education, valuable skills
+            and opportunities for personal development.
+          </p>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- LATEST ARTICLES -->
+
+    <section class="section articles-section" id="latest-articles">
+      <div class="container">
+
+        <div class="section-top">
+          <div>
+            <h2 class="section-heading">Latest Articles</h2>
+            <p class="section-intro">
+              Read, reflect and discover something valuable.
+            </p>
+          </div>
+        </div>
+
+        <div class="article-grid">
+
+          {% for post in site.posts limit:6 %}
+
+            <article class="article-card">
+
+              <div class="article-category">
+                {{ post.categories | first | replace: "-", " " }}
+              </div>
+
+              <h3>{{ post.title }}</h3>
+
+              <p>
+                {{ post.excerpt | strip_html | truncate: 150 }}
+              </p>
+
+              <div class="article-date">
+                {{ post.date | date: "%B %d, %Y" }}
+              </div>
+
+              <a class="read-link"
+                href="{{ post.url | relative_url }}">
+                Read Full Article →
+              </a>
+
+            </article>
+
+          {% else %}
+
+            <div class="empty-message">
+              Our first articles are coming soon.
+              Please check back again.
+            </div>
+
+          {% endfor %}
+
+        </div>
+      </div>
+    </section>
+
+    <!-- RESOURCES -->
+
+    <section class="section container" id="resources">
+
+      <h2 class="section-heading">Recommended Resources</h2>
+
+      <p class="section-intro">
+        Discover useful books, learning materials,
+        courses and tools selected to support your growth.
+      </p>
+
+      <div class="feature-grid">
+
+        <div class="feature">
+          <h3>Books & Learning</h3>
+          <p>
+            Discover helpful books, educational materials
+            and resources for lifelong learning.
+          </p>
+          <a href="#resources">Explore Resources →</a>
+        </div>
+
+        <div class="feature">
+          <h3>Recommended Products</h3>
+          <p>
+            Explore carefully selected products and services
+            through our recommendations.
+          </p>
+          <a href="affiliate-disclosure.html">
+            Affiliate Information →
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STORE -->
+
+    <section class="section articles-section" id="store">
+
+      <div class="container">
+
+        <h2 class="section-heading">The Life & Beyond Store</h2>
+
+        <p class="section-intro">
+          Practical digital products designed to help you
+          learn, reflect, plan and grow.
+        </p>
+
+        <div class="feature-grid">
+
+          <div class="feature">
+            <h3>Our Digital Products</h3>
+            <p>
+              Explore our ebooks, personal development guides,
+              journals, workbooks and planners.
+            </p>
+            <a href="store.html">Visit Our Store →</a>
+          </div>
+
+          <div class="feature">
+            <h3>Learn at Your Own Pace</h3>
+            <p>
+              Find practical resources that help you take
+              meaningful steps towards your goals.
+            </p>
+            <a href="#latest-articles">Start Exploring →</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+
+    <section class="mission" id="about">
+      <div class="container">
+
+        <h2>More Than Information. A Journey of Growth.</h2>
+
+        <p>
+          Life & Beyond exists to make meaningful knowledge,
+          thoughtful perspectives and useful resources
+          accessible to people who want to understand life
+          and grow with purpose.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container">
+
+      <div class="footer-content">
+
+        <div>
+          <h3>Life & Beyond</h3>
+          <p>Understand life. Grow with purpose.</p>
+          <p>
+            An independent digital magazine dedicated
+            to learning, meaningful living and personal growth.
+          </p>
+        </div>
+
+        <div>
+          <h3>Explore</h3>
+          <div class="footer-links">
+            <a href="#departments">Departments</a>
+            <a href="#latest-articles">Articles</a>
+            <a href="#resources">Resources</a>
+            <a href="#store">Our Store</a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Information</h3>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        &copy; <span id="year"></span> Life & Beyond.
+        All rights reserved.
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    const menuButton = document.getElementById("menuButton");
+    const mainNav = document.getElementById("mainNav");
+
+    menuButton.addEventListener("click", function () {
+      const isOpen = mainNav.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", isOpen);
+      menuButton.textContent = isOpen ? "Close ✕" : "Menu ☰";
+    });
+
+    mainNav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        mainNav.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.textContent = "Menu ☰";
+      });
+    });
+  </script>
+
+</body>
+</html>
