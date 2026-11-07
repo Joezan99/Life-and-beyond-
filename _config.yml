@@ -1,0 +1,17 @@
+title: "Life & Beyond"
+description: "Understand life. Grow with purpose."
+url: "https://joezan99.github.io"
+baseurl: "/Life-and-beyond-"
+
+markdown: kramdown
+permalink: /articles/:categories/:title/
+
+plugins:
+  - jekyll-feed
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
