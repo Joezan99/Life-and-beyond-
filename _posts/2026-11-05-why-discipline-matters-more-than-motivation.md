@@ -1,4 +1,3 @@
-
 ---
 title: "Why Discipline Matters More Than Motivation"
 date: 2026-11-05
